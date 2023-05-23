@@ -2,7 +2,7 @@ from mpl_toolkits.axisartist.parasite_axes import HostAxes, ParasiteAxes
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
-from numpy import polyfit
+#from numpy import polyfit
 from matplotlib import cm
 
 from mpl_toolkits import mplot3d
@@ -602,8 +602,6 @@ print('Number of remaining stress points to test={}'.format(len(pointx)))
 TWtest=np.array((F11*pointx**2 + F1*pointx + F22*pointy**2 \
 	+ F2*pointy + F33*pointz**2 + F3*pointz + 2*F12*pointx*pointy \
 	 + 2*F23*pointz*pointy + 2*F13*pointx*pointz))
-	 
-index=np.linspace(0,1,len(TWtest))
 
 ########################################################################
 ###############################################################################################
@@ -836,6 +834,10 @@ print('Principle axis/diameters full lengths hills: 2a = {}, 2b = {}, 2c = {}'.f
 arrone=np.ones(len(TWtest))
 dTWtest=TWtest-1
 dhills=hills-1
+
+	 
+index=np.linspace(0,1,len(TWtest))
+
 
 total_percenthills=100*np.sqrt(dhills+1)			#since minimum of hills is 0 so max value difference till 1 is 1
 #print(total_percenthills)
